@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Тестовое пларсон" name="description">
+    <meta content="HTML, CSS" name="keywords">
+    <meta content="Ольга Санина" name="author">
+    <title>Тестовое3</title>
+    <script>
+        function v(cb) {
+            document.addEventListener(' ', () => {
+                if (document.readyState === 'interactive') {
+                    console.log("Страница уже загружена. Теперь мы можем получить доступ к DOM объектам");
+                    document.addEventListener('DOMContentLoaded', () => {
+                    });
+                }
+                if (document.readyState === 'loading') {
+                    console.log("Страница все ещё загружается");
+                    document.addEventListener('DOMContentLoaded', () => {
+                    });
+                }
+            })
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('Страница загружена вместе с дополнительными ресурсами');
+        })
+    </script>
+</head>
+<body>Страница 2-ое тестовое</body>
+</html>
